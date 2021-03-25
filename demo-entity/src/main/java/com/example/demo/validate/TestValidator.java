@@ -6,10 +6,10 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 @Slf4j
-public class TestValidator implements ConstraintValidator<Test, Object> {
+public class TestValidator implements ConstraintValidator<MyTeset, Object> {
 
     @Override
-    public void initialize(Test constraintAnnotation) {
+    public void initialize(MyTeset constraintAnnotation) {
     }
 
     @Override
