@@ -1,7 +1,6 @@
 package com.example.demo.entitiy;
 
-import com.example.demo.validate.Test;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.example.demo.validate.MyTeset;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +16,7 @@ import java.util.List;
 @Setter
 public class Person {
 
-    @Test
+    @MyTeset
     @Max(100)
     private int age ;
 

@@ -8,9 +8,9 @@ import java.lang.annotation.*;
 @Target({ ElementType.PARAMETER, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = TestValidator.class)
-public @interface Test {
+public @interface MyTeset {
 
-    String message() default "Test is haowan";
+    String message() default "MyTeset is haowan";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 
