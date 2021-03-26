@@ -1,6 +1,6 @@
-package com.example.demo.facade.impl;
+package com.example.demo.service.facade.impl;
 
-import com.example.demo.facade.DailyWorkReportService;
+import com.example.demo.service.facade.DailyWorkReportService;
 
 public class DailyWorkReportServiceImpl implements DailyWorkReportService {
 
