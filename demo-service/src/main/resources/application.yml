@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: demo-service
+
+person:
+  age: 12
+  name: "123"
+
+logging:
+  level:
+    root: debug
+
+

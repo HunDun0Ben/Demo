@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
@@ -19,8 +19,9 @@
 
     <modules>
         <module>demo-record</module>
-        <module>demo-facade</module>
+        <module>demo-common</module>
         <module>demo-entity</module>
+        <module>demo-facade</module>
         <module>demo-service</module>
         <module>demo-web</module>
     </modules>

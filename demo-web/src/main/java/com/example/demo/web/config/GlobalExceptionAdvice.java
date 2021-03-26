@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
 
+/**
+ * @author Ben
+ */
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionAdvice {
@@ -18,8 +21,8 @@ public class GlobalExceptionAdvice {
     /**
      * 校验失败进入统一的异常处理器，告知前端校验失败。
      * 并且打印出错的字段，及对应的value
-     * @param ex
-     * @return
+     * @param ex 校验错误
+     * @return 返回的body
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handle(MethodArgumentNotValidException ex) {
@@ -27,15 +30,10 @@ public class GlobalExceptionAdvice {
         log.error("日志异常", ex);
         List<FieldError> bindingResult = ex.getBindingResult().getFieldErrors();
         for (FieldError fieldError : bindingResult) {
-            Object value = fieldError.getRejectedValue();
-            String valueStr = null;
-            log.error("Validate error message: {} ;Field: {}; RejectedValue: {}", fieldError.getDefaultMessage(), fieldError.getField(), fieldError.getRejectedValue());
+            log.error("[Field Value Error]: {} = {}; \n" +
+                      "[Message]: {};", fieldError.getField(), fieldError.getRejectedValue(), fieldError.getDefaultMessage());
         }
-        return new ResponseEntity<String>("bad request", headers, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("Bad Request。Validate data error.", headers, HttpStatus.BAD_REQUEST);
     }
 
-    private String getRejectValueString(Object obj) {
-
-        return null;
-    }
 }

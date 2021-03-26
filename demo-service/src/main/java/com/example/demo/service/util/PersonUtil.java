@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.example.demo.service.util;
 
 import lombok.Getter;
 import lombok.Setter;
