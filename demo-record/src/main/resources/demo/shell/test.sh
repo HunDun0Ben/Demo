@@ -32,6 +32,7 @@ analysisOpt() {
     o) output_path=$OPTARG ;;
     # m - 生成的文件名称前缀
     m) name_prefix=$OPTARG ;;
+    *) ;;
     esac
   done
 }
@@ -104,6 +105,7 @@ function fileRound(){
     # 遍历文件
     for file in `ls $1`
     do
+      [[ -e "$file" ]] || break # handle the case of no file
       local path="$1/$file"
       if [ -d $path ]; then
         fileRound $path
