@@ -1,6 +1,8 @@
 package com.example.demo.entitiy;
 
-public interface Lottery {
+import java.io.Serializable;
+
+public interface Lottery extends Serializable {
     /**
      * 生成号码
      */

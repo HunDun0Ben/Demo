@@ -1,7 +1,8 @@
 package com.example.demo.web.controller;
 
-import com.example.demo.entitiy.BigLottery;
 import com.example.demo.entitiy.Lottery;
+import com.example.demo.service.facade.LotteryService;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,10 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/lottery")
 public class LotteryController {
 
+    @DubboReference(version = "1.0.0", group = "test", interfaceClass = LotteryService.class )
+    LotteryService lotteryService;
+
     @RequestMapping("/bigLottery/random")
-    public String randomBigLottery(){
-        Lottery lottery = new BigLottery();
-        lottery.generateNumber();
+    public String randomBigLottery() {
+        Lottery lottery = lotteryService.getNewLottery();
         return lottery.getPrintNumber();
     }
 
