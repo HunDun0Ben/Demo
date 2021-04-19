@@ -3,3 +3,16 @@ server:
     context-path: /demo
   port: 33456
 
+dubbo:
+  application:
+    name: web
+    id: web
+  scan:
+    # 包名根据自己的实际情况写
+    base-packages: com.example.demo.web
+  protocol:
+    port: 20882
+    name: dubbo
+  registry:
+    #zookeeper注册中心地址
+    address: zookeeper://127.0.0.1:2181

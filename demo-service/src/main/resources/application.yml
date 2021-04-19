@@ -11,6 +11,9 @@ logging:
     root: debug
 
 dubbo:
+  application:
+    name: service
+    id: service
   scan:
     # 包名根据自己的实际情况写
     base-packages: com.example.demo.service.facade.impl
