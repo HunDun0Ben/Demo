@@ -1,5 +1,6 @@
-package com.example.demo.validate;
+package com.example.demo.validation.validators;
 
+import com.example.demo.validation.constraints.MyTeset;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.validation.ConstraintValidator;
