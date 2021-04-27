@@ -1,4 +1,6 @@
-package com.example.demo.validate;
+package com.example.demo.validation.constraints;
+
+import com.example.demo.validation.validators.TestValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

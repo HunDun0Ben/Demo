@@ -1,6 +1,6 @@
 package com.example.demo.entitiy;
 
-import com.example.demo.validate.MyTeset;
+import com.example.demo.validation.constraints.MyTeset;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
