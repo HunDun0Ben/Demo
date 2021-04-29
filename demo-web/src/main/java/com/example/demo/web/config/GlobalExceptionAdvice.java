@@ -17,7 +17,6 @@ import java.util.List;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionAdvice {
-
     /**
      * 校验失败进入统一的异常处理器，告知前端校验失败。
      * 并且打印出错的字段，及对应的value
@@ -36,4 +35,8 @@ public class GlobalExceptionAdvice {
         return new ResponseEntity<>("Bad Request。Validate data error.", headers, HttpStatus.BAD_REQUEST);
     }
 
+    private String getRejectValueString(Object obj) {
+
+        return null;
+    }
 }

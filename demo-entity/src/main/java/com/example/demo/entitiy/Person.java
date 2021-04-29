@@ -1,6 +1,7 @@
 package com.example.demo.entitiy;
 
-import com.example.demo.validation.constraints.MyTeset;
+import com.example.demo.entitiy.enumc.Sex;
+import com.example.demo.validation.constraints.EnumValid;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +17,9 @@ import java.util.List;
 @Setter
 public class Person {
 
-    @MyTeset
+    @EnumValid(target = Sex.class)
+    private String sex;
+
     @Max(100)
     private int age ;
 
