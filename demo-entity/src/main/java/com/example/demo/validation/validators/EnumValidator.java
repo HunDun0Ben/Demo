@@ -34,11 +34,10 @@ public class EnumValidator implements ConstraintValidator<EnumValid, Object> {
                         break;
                     }
                 } else {
+                    log.warn(cls.getName() + " can't use EnumValidator validate.");
                     break;
                 }
             }
-            log.warn(cls.getName() + " can't use EnumValidator validate.");
-            result = false;
         } else {
             result = true;
         }

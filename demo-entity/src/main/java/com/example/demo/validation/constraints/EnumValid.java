@@ -7,25 +7,24 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
+/**
+ * @author Ben.Guo
+ */
 @Documented
 @Target({ ElementType.PARAMETER, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { EnumValidator.class })
 public @interface EnumValid {
 
-    String message() default "The current field can't be {}";
+    String message() default "The current field can't be this value";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
 
-    /**
-     * 目标枚举类
-     */
-    Class<?> target() default Class.class;
+    // target class that extend Enum.
+    Class<? extends Enum<?>> target();
 
-    /**
-     * 是否忽略空值
-     */
+    // validate value can be null
     boolean ignoreEmpty() default true;
 }

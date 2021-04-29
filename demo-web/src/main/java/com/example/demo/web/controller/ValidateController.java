@@ -19,7 +19,6 @@ public class ValidateController {
         System.out.println("This is Validate Demo.");
         String sql = "";
         String corpId = "";
-
         return person;
     }
 }

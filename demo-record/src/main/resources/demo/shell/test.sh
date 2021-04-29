@@ -1,4 +1,9 @@
 #!/bin/bash
+# # # # # # # # # #
+# description: use ffmpeg merge video and audio.
+#  it can loop you folder, merge *.audio and *.video file in the same folder.
+# # # # # # # # # #
+
 # 字体颜色
 RED="\033[4;31m"
 GREEN="\033[1;32m"
