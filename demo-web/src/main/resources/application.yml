@@ -3,10 +3,14 @@ server:
     context-path: /demo
   port: 33456
 
+spring:
+  application:
+    name: demo-dubbo-web
+
 dubbo:
   application:
-    name: web
-    id: web
+    name: dubbo-web
+    id: dubbo-web
   scan:
     # 包名根据自己的实际情况写
     base-packages: com.example.demo.web
