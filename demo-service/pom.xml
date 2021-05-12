@@ -56,12 +56,14 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- 自身项目的引用 -->
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>demo-facade</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <!-- dubbo 使用时，与 zookeeper 交互需要使用到的依赖。
+        ？？？也可以使用 zkClient -->
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
@@ -73,6 +75,14 @@
             <artifactId>curator-recipes</artifactId>
             <version>5.1.0</version>
         </dependency>
+        <!-- 引入 PowerMock，加强单元测试的能力 -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
