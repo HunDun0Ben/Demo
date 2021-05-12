@@ -24,6 +24,7 @@
         <module>demo-facade</module>
         <module>demo-service</module>
         <module>demo-web</module>
+        <module>demo-atest</module>
     </modules>
 
     <dependencyManagement>
