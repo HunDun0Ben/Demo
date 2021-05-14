@@ -95,6 +95,16 @@
             <artifactId>powermock-module-junit4</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>javassist</artifactId>
+                    <groupId>org.javassist</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>objenesis</artifactId>
+                    <groupId>org.objenesis</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
