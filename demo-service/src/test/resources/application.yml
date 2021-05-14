@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: demo-service
+
+person:
+  age: 12
+  name: "123"
+
+logging:
+  level:
+    root: info
+
+dubbo:
+  application:
+    name: dubbo-service
+    id: dubbo-service
+  scan:
+    # 包名根据自己的实际情况写
+    base-packages: com.example.demo.service.facade.impl
+  protocol:
+    port: 20880
+    name: dubbo
+  registry:
+    #zookeeper注册中心地址
+    address: zookeeper://127.0.0.1:2181
