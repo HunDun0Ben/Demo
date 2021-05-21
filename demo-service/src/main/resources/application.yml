@@ -8,7 +8,7 @@ person:
 
 logging:
   level:
-    root: debug
+    root: info
 
 dubbo:
   application:
