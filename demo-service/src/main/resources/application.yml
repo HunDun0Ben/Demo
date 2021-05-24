@@ -1,6 +1,8 @@
 spring:
   application:
     name: demo-service
+  messages:
+    basename: static/i18n/common_message
 
 person:
   age: 12
