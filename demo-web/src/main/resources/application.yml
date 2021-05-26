@@ -8,6 +8,9 @@ spring:
     name: demo-dubbo-web
 
 dubbo:
+  # 是否启用 springboot-dubbo
+  enabled: false
+ # enabled: true
   application:
     name: dubbo-web
     id: dubbo-web
