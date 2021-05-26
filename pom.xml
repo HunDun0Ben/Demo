@@ -27,6 +27,12 @@
         <module>demo-atest</module>
     </modules>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <curator.version>5.1.0</curator.version>
+        <zookeeper.version>3.6.0</zookeeper.version>
+        <powermock.version>2.0.2</powermock.version>
+    </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -43,6 +49,53 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-test-autoconfigure</artifactId>
                 <version>2.1.9.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.zookeeper</groupId>
+                        <artifactId>zookeeper</artifactId>
+                    </exclusion>
+                </exclusions>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+
+            <!-- 引入 PowerMock，加强单元测试的能力 -->
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javassist</artifactId>
+                        <groupId>org.javassist</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>objenesis</artifactId>
+                        <groupId>org.objenesis</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito2</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
