@@ -21,7 +21,7 @@ public class WebLogMDCInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-        log.info("PreHandle always enters");
+        // PreHandle always enters
         String str = String.valueOf(System.currentTimeMillis());
         MDC.put("MDC", str);
         return true;
@@ -29,14 +29,13 @@ public class WebLogMDCInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("When Controller has correctly returned, this function will be executed. ");
+        // When Controller has correctly returned, this function will be executed.
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("When preHandle() return is ture, this function will be executed.");
-        log.info("You can still get the value of the MDC here.");
+        // When preHandle() return is ture, this function will be executed.
+        // You can still get the value of the MDC here.
         MDC.clear();
-        log.error("MDC is removed, here it does not have MDC value.");
     }
 }

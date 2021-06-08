@@ -15,7 +15,6 @@ public class LotteryServiceImpl implements LotteryService {
     @Override
     public Lottery getNewLottery() {
         Lottery lottery = new BigLottery();
-
         lottery.generateNumber();
         return lottery;
     }
