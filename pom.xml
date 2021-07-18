@@ -18,13 +18,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>demo-record</module>
         <module>demo-common</module>
         <module>demo-entity</module>
         <module>demo-facade</module>
         <module>demo-service</module>
         <module>demo-web</module>
-        <module>demo-atest</module>
     </modules>
 
     <properties>
