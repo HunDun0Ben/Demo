@@ -26,8 +26,8 @@ interface Subscribe {
 public class PubSubModel {
     public static void main(String[] args) {
         EventPublish publish = new EventPublish();
-        Subscribe sub1 = new EventSubscribe("EventSubscribe`1");
-        Subscribe sub2 = new EventSubscribe("EventSubscribe`2");
+        Subscribe sub1 = new EventSubscribes("EventSubscribes`1");
+        Subscribe sub2 = new EventSubscribes("EventSubscribes`2");
         publish.registerSub(sub1).add(sub2);
         publish.publishMessage();
     }
@@ -57,11 +57,11 @@ class EventPublish implements Publish {
     }
 }
 
-class EventSubscribe implements Subscribe {
+class EventSubscribes implements Subscribe {
 
     private final String name;
 
-    public EventSubscribe(String name) {
+    public EventSubscribes(String name) {
         this.name = name;
     }
 
