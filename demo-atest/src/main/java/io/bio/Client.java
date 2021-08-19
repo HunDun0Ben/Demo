@@ -14,7 +14,7 @@ public class Client {
         socket.getOutputStream().write("afkldlsjfjfdlkajflkdjsadfsaf".getBytes());
         InputStreamReader reader = new InputStreamReader(socket.getInputStream());
         while (true) {
-            if(reader.read() != -1) {
+            if(reader.ready()) {
                 char[] buf = new char[1024];
                 reader.read(buf);
                 System.out.println(new String(buf));
