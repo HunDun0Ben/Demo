@@ -1,4 +1,4 @@
-package design.model.event.bus;
+package com.hundun.atest.design.model.bus;
 
 
 import java.lang.annotation.ElementType;

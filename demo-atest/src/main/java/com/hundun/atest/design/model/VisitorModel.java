@@ -1,6 +1,5 @@
-package design.model;
+package com.hundun.atest.design.model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

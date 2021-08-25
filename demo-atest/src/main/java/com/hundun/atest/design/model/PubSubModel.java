@@ -1,4 +1,4 @@
-package design.model;
+package com.hundun.atest.design.model;
 
 import java.lang.annotation.*;
 import java.util.ArrayList;

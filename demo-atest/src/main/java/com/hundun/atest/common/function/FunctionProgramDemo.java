@@ -1,4 +1,4 @@
-package function;
+package com.hundun.atest.common.function;
 
 import lombok.Builder;
 

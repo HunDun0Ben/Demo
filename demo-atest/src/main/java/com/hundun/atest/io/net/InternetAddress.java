@@ -1,4 +1,6 @@
-package net;
+package com.hundun.atest.io.net;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -14,6 +16,7 @@ public class InternetAddress {
         localHost = getLocalHostExactAddress();
         System.out.println(localHost.getHostAddress());
         // System.out.println(localHost.getHostName());
+        ObjectMapper mapper = new ObjectMapper();
     }
 
 

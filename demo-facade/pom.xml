@@ -5,19 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.hundun</groupId>
         <artifactId>demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.example</groupId>
     <artifactId>demo-facade</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>com.example</groupId>
+            <groupId>com.hundun</groupId>
             <artifactId>demo-entity</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

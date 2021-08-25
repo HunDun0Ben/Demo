@@ -1,4 +1,4 @@
-package io.netty;
+package com.hundun.atest.io.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;

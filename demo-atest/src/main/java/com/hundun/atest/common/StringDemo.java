@@ -1,4 +1,4 @@
-package common;
+package com.hundun.atest.common;
 
 public class StringDemo {
 

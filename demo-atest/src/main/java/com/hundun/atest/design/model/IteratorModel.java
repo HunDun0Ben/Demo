@@ -1,4 +1,4 @@
-package design.model;
+package com.hundun.atest.design.model;
 
 public class IteratorModel {
 
