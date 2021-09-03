@@ -16,8 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @PowerMockRunnerDelegate(SpringRunner.class)
 
 @WebMvcTest(WebControllerTest.class)
-@ContextConfiguration(classes = { DemoWebApplication.class })
-
 @Rollback
 public class WebControllerTest {
 

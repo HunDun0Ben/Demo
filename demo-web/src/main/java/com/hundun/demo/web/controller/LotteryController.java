@@ -17,7 +17,7 @@ public class LotteryController {
 
     @RequestMapping("/bigLottery/random")
     public String randomBigLottery() {
-        Lottery lottery = lotteryService.getNewLottery();
+        Lottery lottery = lotteryService.getRandLottery();
         return lottery.getPrintNumber();
     }
 }

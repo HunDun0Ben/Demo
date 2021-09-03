@@ -3,6 +3,11 @@ spring:
     name: demo-service
   messages:
     basename: static/i18n/common_message
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 person:
   age: 12

@@ -15,8 +15,11 @@ public class Test {
         }
 
         for (EnumTest value : EnumTest.values()) {
-            System.out.println(value.name());
-            ;
+                System.out.println(value.name());
+                EnumTest t = EnumTest.valueOf(value.name());
+                System.out.println(t);
         }
+        
+        
     }
 }

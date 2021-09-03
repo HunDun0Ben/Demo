@@ -6,14 +6,14 @@ import com.hundun.demo.service.facade.LotteryService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 @DubboService(version = "1.0.0", group = "test", interfaceClass = LotteryService.class )
-public class LotteryServiceImpl implements LotteryService {
+public class BigLotteryServiceImpl implements LotteryService {
 
-    public LotteryServiceImpl() {
+    public BigLotteryServiceImpl() {
         System.out.println("【LotteryService】Init class is directory java file.");
     }
 
     @Override
-    public Lottery getNewLottery() {
+    public Lottery getRandLottery() {
         Lottery lottery = new BigLottery();
         lottery.generateNumber();
         return lottery;

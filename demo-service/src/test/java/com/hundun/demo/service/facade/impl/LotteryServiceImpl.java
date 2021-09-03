@@ -10,7 +10,7 @@ public class LotteryServiceImpl implements LotteryService {
     }
 
     @Override
-    public Lottery getNewLottery() {
+    public Lottery getRandLottery() {
         return null;
     }
 }
