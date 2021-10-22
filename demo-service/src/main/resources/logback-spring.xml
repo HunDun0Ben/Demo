@@ -7,7 +7,7 @@
     <!--设置系统日志目录-->
     <property name="APPDIR" value="/demo-service"/>
     <!--格式化输出：%d:表示日期    %thread:表示线程名     %-5level:级别从左显示5个字符宽度  %msg:日志消息    %n:是换行符-->
-    <property name="LOG_MSG_FORMAT" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger - %X{MDC} %msg%n" />
+    <property name="LOG_MSG_FORMAT" value="%d{yy-MM-dd HH:mm:ss} [%thread] %-5level %c{40} - %X{MDC} %msg%n" />
     <!-- %m输出的信息,%p日志级别,%t线程名,%d日期,%c类的全名,,,, -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -65,42 +65,8 @@
         </filter>
     </appender>
 
-    <logger name="com.minlia" level="DEBUG"/>
-    <logger name="org.springframework.data.mybatis" level="DEBUG"/>
-    <logger name="org.springframework.aop.aspectj" level="ERROR"/>
-    <logger name="javax.activation" level="WARN"/>
-    <logger name="javax.mail" level="WARN"/>
-    <logger name="javax.xml.bind" level="WARN"/>
-    <logger name="ch.qos.logback" level="INFO"/>
-    <logger name="com.codahale.metrics" level="WARN"/>
-    <logger name="com.ryantenney" level="WARN"/>
-    <logger name="com.sun" level="WARN"/>
-    <logger name="com.zaxxer" level="WARN"/>
-    <logger name="io.undertow" level="WARN"/>
-    <logger name="net.sf.ehcache" level="WARN"/>
-    <logger name="org.apache" level="WARN"/>
-    <logger name="org.apache.catalina.startup.DigesterFactory" level="OFF"/>
-    <logger name="org.bson" level="WARN"/>
-    <logger name="org.hibernate.validator" level="WARN"/>
-    <logger name="org.hibernate" level="WARN"/>
-    <logger name="org.hibernate.ejb.HibernatePersistence" level="OFF"/>
-    <logger name="org.springframework.web" level="INFO"/>
-    <logger name="org.springframework.security" level="WARN"/>
-    <logger name="org.springframework.cache" level="WARN"/>
-    <logger name="org.thymeleaf" level="WARN"/>
-    <logger name="org.xnio" level="WARN"/>
-    <logger name="springfox" level="WARN"/>
-    <logger name="sun.rmi" level="WARN"/>
-    <logger name="liquibase" level="WARN"/>
-    <logger name="sun.rmi.transport" level="WARN"/>
-    <logger name="jdbc.connection" level="ERROR"/>
-    <logger name="jdbc.resultset" level="ERROR"/>
-    <logger name="jdbc.resultsettable" level="INFO"/>
-    <logger name="jdbc.audit" level="ERROR"/>
-    <logger name="jdbc.sqltiming" level="ERROR"/>
-    <logger name="jdbc.sqlonly" level="INFO"/>
-
-    <logger name="org.springframework" level="DEBUG"/>
+    <logger name="org.apache.ibatis" level="debug"/>
+    <logger name="org.mybatis" level="debug"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
