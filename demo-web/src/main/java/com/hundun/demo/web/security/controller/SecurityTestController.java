@@ -12,6 +12,12 @@ public class SecurityTestController {
         return "true";
     }
 
+
+    @PostMapping("/login")
+    public String doLogin(String name, String passwd) {
+        return "true";
+    }
+
     @GetMapping("/hello")
     public String hello() {
         return "hello";

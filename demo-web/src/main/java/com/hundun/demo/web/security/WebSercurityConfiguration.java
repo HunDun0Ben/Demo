@@ -39,9 +39,13 @@ public class WebSercurityConfiguration  extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/user/**").hasRole("user")
                 .antMatchers("/admin/**").hasRole("admin")
-                .anyRequest().authenticated()
-                .and().formLogin().loginPage("/login").permitAll()
+                .antMatchers("/login").permitAll()
+                .anyRequest().authenticated();
+        http.formLogin()
+                .loginPage("/login").loginProcessingUrl("/login")
+                .passwordParameter("passwd").usernameParameter("name").permitAll()
                 .and().csrf().disable();
+        http.httpBasic();
     }
 
 }
