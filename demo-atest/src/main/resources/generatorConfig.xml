@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!--
+Default configuration
+configurationFile = E:\workspace\project\demo\demo-atest\src\main\resources\generatorConfig.xml
+includeAllDependencies = false
+includeCompileDependencies = false
+outputDirectory = E:\workspace\project\demo\demo-atest\target\generated-sources\mybatis-generator
+overwrite = false
+project = MavenProject: com.hundun:demo-atest:0.0.1-SNAPSHOT @ E:\workspace\project\demo\demo-atest\pom.xml
+skip = false
+verbose = false
+
+<configuration>
+  <configurationFile default-value="${project.basedir}/src/main/resources/generatorConfig.xml">${mybatis.generator.configurationFile}</configurationFile>
+  <contexts>${mybatis.generator.contexts}</contexts>
+  <includeAllDependencies default-value="false">${mybatis.generator.includeAllDependencies}</includeAllDependencies>
+  <includeCompileDependencies default-value="false">${mybatis.generator.includeCompileDependencies}</includeCompileDependencies>
+  <jdbcDriver>${mybatis.generator.jdbcDriver}</jdbcDriver>
+  <jdbcPassword>${mybatis.generator.jdbcPassword}</jdbcPassword>
+  <jdbcURL>${mybatis.generator.jdbcURL}</jdbcURL>
+  <jdbcUserId>${mybatis.generator.jdbcUserId}</jdbcUserId>
+  <outputDirectory default-value="${project.build.directory}/generated-sources/mybatis-generator">${mybatis.generator.outputDirectory}</outputDirectory>
+  <overwrite default-value="false">${mybatis.generator.overwrite}</overwrite>
+  <project>${project}</project>
+  <skip default-value="false">${mybatis.generator.skip}</skip>
+  <sqlScript>${mybatis.generator.sqlScript}</sqlScript>
+  <tableNames>${mybatis.generator.tableNames}</tableNames>
+  <verbose default-value="false">${mybatis.generator.verbose}</verbose>
+</configuration>
+-->
+
+<generatorConfiguration>
+    <properties resource="mybatis-plus/datasource.properties"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--<plugin type="org.generator.plugins.SerializablePlugin"/>-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="test.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="test.xml"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table schema="demo" tableName="userinfo" >
+            <generatedKey column="ID" sqlStatement="mysql" identity="true" />
+        </table>
+
+    </context>
+</generatorConfiguration>
