@@ -1,34 +1,30 @@
-spring:
-  application:
-    name: demo-service
-  messages:
-    basename: static/i18n/common_message
-  datasource:
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-person:
-  age: 12
-  name: "123"
-
-logging:
-  level:
-    root: info
-
+# 加载顺序是 yaml > yml > properties, 优先级则相反。
 dubbo:
-  # 是否启用 springboot-dubbo
-  enabled: true
-  application:
-    name: dubbo-service
-    id: dubbo-service
-  scan:
-    # 包名根据自己的实际情况写
-    base-packages: com.example.demo.service
-  protocol:
-    port: 20880
-    name: dubbo
-  registry:
-    #zookeeper注册中心地址
-    address: zookeeper://127.0.0.1:2181
+    application:
+        id: dubbo-service
+        name: dubbo-service
+    enabled: true
+    protocol:
+        name: dubbo
+        port: 20880
+    registry:
+        address: zookeeper://127.0.0.1:2181
+    scan:
+        base-packages: com.example.demo.service
+logging:
+    level:
+        root: info
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.hundun.demo.entity
+
+spring:
+    application:
+        name: demo-service
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: root
+        url: jdbc:mysql://localhost:3306/demo?serverTimezone=UTC
+        username: root
+    messages:
+        basename: static/i18n/common_message
