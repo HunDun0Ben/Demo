@@ -15,7 +15,7 @@ public class PersonUtil {
     private int age ;
     private String name;
 
-    public PersonUtil(@Value("${person.age}") int age, @Value("${person.name}")String name) {
+    public PersonUtil(@Value("${person.age:12}") int age, @Value("${person.name:Ben}")String name) {
         this.age = age;
         this.name = name;
         log.info("age:{}, name:{}",age,name);
