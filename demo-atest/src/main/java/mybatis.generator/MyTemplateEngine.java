@@ -24,9 +24,14 @@ public class MyTemplateEngine extends VelocityTemplateEngine {
 
     @Override
     protected String getPathInfo(OutputFile outputFile) {
+        // 基本路径
         String path = getConfigBuilder().getPathInfo().get(outputFile);
+        // 包路径
         PackageConfig packageConfig = getConfigBuilder().getPackageConfig();
-        return matcher.replaceFrom(joiner.join(path, packageConfig.getPackageInfo().get(map.get(outputFile.ordinal()))), File.separator);
+        return matcher.replaceFrom(
+                // 基本路径加包路径。
+                joiner.join(path, packageConfig.getPackageInfo().get(map.get(outputFile.ordinal()))),
+                File.separator);
     }
 
     private static Map<Integer, String> map =
@@ -38,4 +43,6 @@ public class MyTemplateEngine extends VelocityTemplateEngine {
             .put(OutputFile.controller.ordinal(), ConstVal.CONTROLLER)
             .put(OutputFile.other.ordinal(), ConstVal.OTHER)
             .build();
+
+
 }
