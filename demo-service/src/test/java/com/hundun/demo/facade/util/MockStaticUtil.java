@@ -1,4 +1,4 @@
-package com.hundun.demo.service.util;
+package com.hundun.demo.facade.util;
 
 public class MockStaticUtil {
     final static String NAME = "MockStaticUtil.java";

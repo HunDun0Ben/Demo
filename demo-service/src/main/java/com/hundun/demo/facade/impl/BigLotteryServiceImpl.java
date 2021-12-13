@@ -1,8 +1,8 @@
-package com.hundun.demo.service.facade.impl;
+package com.hundun.demo.facade.impl;
 
 import com.hundun.demo.entity.BigLottery;
 import com.hundun.demo.entity.Lottery;
-import com.hundun.demo.service.facade.LotteryService;
+import com.hundun.demo.facade.LotteryService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 @DubboService(version = "1.0.0", group = "test", interfaceClass = LotteryService.class )

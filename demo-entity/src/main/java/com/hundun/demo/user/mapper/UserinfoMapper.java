@@ -1,7 +1,6 @@
 package com.hundun.demo.user.mapper;
 
-import com.hundun.demo.user.entity.Userinfo;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author Ben
  * @since 2021-12-07
  */
-public interface UserinfoMapper extends BaseMapper<Userinfo> {
+@Mapper
+public interface UserinfoMapper {
 
 }

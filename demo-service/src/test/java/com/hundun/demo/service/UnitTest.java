@@ -1,6 +1,6 @@
 package com.hundun.demo.service;
 
-import com.hundun.demo.service.util.MockStaticUtil;
+import com.hundun.demo.facade.util.MockStaticUtil;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;

@@ -1,4 +1,4 @@
-package com.hundun.demo.service;
+package com.hundun.demo.facade;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;

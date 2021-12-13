@@ -37,10 +37,13 @@
         <zookeeper.version>3.6.0</zookeeper.version>
         <powermock.version>2.0.2</powermock.version>
         <guava.version>27.0.1-jre</guava.version>
+        <mybatis.version>2.2.0</mybatis.version>
+        <mybatis.plus.version>3.4.2</mybatis.plus.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- 引入 zookeeper 使用到的相关包 -->
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
@@ -92,18 +95,22 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
             <dependency>
                 <groupId>org.powermock</groupId>
                 <artifactId>powermock-api-mockito2</artifactId>
                 <version>${powermock.version}</version>
                 <scope>test</scope>
             </dependency>
+
             <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

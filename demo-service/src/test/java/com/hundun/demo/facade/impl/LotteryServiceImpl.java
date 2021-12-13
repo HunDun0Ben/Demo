@@ -1,7 +1,7 @@
-package com.hundun.demo.service.facade.impl;
+package com.hundun.demo.facade.impl;
 
 import com.hundun.demo.entity.Lottery;
-import com.hundun.demo.service.facade.LotteryService;
+import com.hundun.demo.facade.LotteryService;
 
 public class LotteryServiceImpl implements LotteryService {
 

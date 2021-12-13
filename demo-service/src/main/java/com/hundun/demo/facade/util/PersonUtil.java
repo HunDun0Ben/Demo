@@ -1,4 +1,4 @@
-package com.hundun.demo.service.util;
+package com.hundun.demo.facade.util;
 
 import lombok.Getter;
 import lombok.Setter;

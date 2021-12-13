@@ -1,6 +1,6 @@
-package com.hundun.demo.service.facade.impl;
+package com.hundun.demo.facade.impl;
 
-import com.hundun.demo.service.facade.DailyWorkReportService;
+import com.hundun.demo.facade.DailyWorkReportService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 @DubboService(version = "1.0.0", group = "test", interfaceClass = DailyWorkReportService.class )

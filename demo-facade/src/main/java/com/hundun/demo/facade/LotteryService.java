@@ -1,4 +1,4 @@
-package com.hundun.demo.service.facade;
+package com.hundun.demo.facade;
 
 import com.hundun.demo.entity.Lottery;
 
