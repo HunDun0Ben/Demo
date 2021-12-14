@@ -10,6 +10,8 @@ import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.fill.Column;
 import com.baomidou.mybatisplus.generator.keywords.MySqlKeyWordsHandler;
 import com.google.common.base.CharMatcher;
+import com.google.common.collect.ImmutableMap;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
@@ -20,7 +22,7 @@ public class MyGenerator {
                 username = "root",
                 pwd = "root";
 
-        String basePath = "E:\\workspace\\project\\demo";
+        String basePath = "E:/workspace/project/demo";
 
         DataSourceConfig.Builder dscb = new DataSourceConfig.Builder(url, username, pwd)
                 .dbQuery(new MySqlQuery())
@@ -42,21 +44,24 @@ public class MyGenerator {
 //                                        .disableOpenDir() // 禁止自动打开跳转输出目录, 只会跳转到 outputDir
                 )
                 // 包配置
-                .packageConfig((scanner, builder) ->
-                        builder
-//                                .parent(scanner.apply("请输入包名？"))
-                                // 基础包名
-                                .parent("com.hundun.demo")
-                                // 设置模块名称·
-                                .moduleName(scanner.apply("请输入模块名:"))
-                                .entity("entity")
-                                .mapper("mapper")
-                                .xml("mapper.xml")
-                                .service("service.facade")
-                                .serviceImpl("service.facade.impl")
-                                .controller("web.controller")
-                                .other("other")
-                                .pathInfo(getPathInfo()))
+                .packageConfig((scanner, builder) -> {
+                    String module = scanner.apply("请输入模块名:");
+                    String base = "com.hundun.demo";
+                    // String base = scanner.apply("请输入模块名:");
+                    builder
+                            // 基础包名
+                            .parent(base)
+                            // 设置模块名称·
+                            .moduleName(module)
+                            .entity("entity")
+                            .mapper("mapper")
+                            .xml("mapper.xml")
+                            .service("service.facade")
+                            .serviceImpl("service.facade.impl")
+                            .controller("web.controller")
+                            .other("other")
+                            .pathInfo(getPathInfo(base, module));
+                })
                 // 策略配置
                 .strategyConfig((scanner, builder) -> builder.addInclude(getTables(scanner.apply("请输入表名，多个英文逗号分隔？所有输入 all")))
                         .controllerBuilder()
@@ -66,8 +71,6 @@ public class MyGenerator {
                             .enableLombok()
                             .addTableFills(new Column("create_time", FieldFill.INSERT))
                         .build())
-
-                .templateEngine(new MyTemplateEngine())
                 .injectionConfig((scanner, builder) -> builder.beforeOutputFile((tableInfo, objectMap) -> {
                     System.out.println("tableInfo: " + tableInfo.getEntityName() + " objectMap: " + objectMap.toString());
                 }))
@@ -80,24 +83,66 @@ public class MyGenerator {
 
     }
 
-    protected static Map<OutputFile, String> getPathInfo() {
-        String javaPath = "E:\\workspace\\project\\demo\\?\\src\\main\\java";
-        String resourcePath = "E:\\workspace\\project\\demo\\?\\src\\main\\resources";
+    protected static Map<OutputFile, String> getPathInfo(String base, String module) {
         //
         CharMatcher matcher = CharMatcher.is('?');
         Map<OutputFile, String> map = new HashMap<>(OutputFile.values().length);
-        map.put(OutputFile.entity, matcher.replaceFrom(javaPath, "demo-entity"));
-        map.put(OutputFile.mapper, matcher.replaceFrom(javaPath, "demo-entity"));
-        map.put(OutputFile.service, matcher.replaceFrom(javaPath, "demo-facade"));
-        map.put(OutputFile.serviceImpl, matcher.replaceFrom(javaPath, "demo-service"));
-        map.put(OutputFile.controller, matcher.replaceFrom(javaPath, "demo-web"));
+        map.put(OutputFile.entity, replaceJavaPath(OutputFile.entity, base, module));
+        map.put(OutputFile.mapper, replaceJavaPath(OutputFile.entity, base, module));
+        map.put(OutputFile.service, replaceJavaPath(OutputFile.entity, base, module));
+        map.put(OutputFile.serviceImpl, replaceJavaPath(OutputFile.entity, base, module));
+        map.put(OutputFile.controller, replaceJavaPath(OutputFile.entity, base, module));
 
-        map.put(OutputFile.mapperXml, matcher.replaceFrom(resourcePath, "demo-entity"));
+        map.put(OutputFile.mapperXml, replaceResource(OutputFile.entity, module));
         return map;
+    }
+
+    protected static String replaceJavaPath(OutputFile file, String base, String module) {
+        String javaPath = "E:/workspace/project/demo/{project}/src/main/java{base}{type}{module}";
+        String type = StringUtils.isBlank(map.get(file)) ? "" : "/" + map.get(file);
+        base = StringUtils.isBlank(base) ? "" : "/" + base;
+        module = StringUtils.isBlank(module) ? "" : "/" + module;
+        return javaPath.replace("{project}",projectMap.get(file))
+                .replace("{base}", base)
+                .replace("{type}", type)
+                .replace("{module}", module)
+                .replaceAll("\\.", "/");
+    }
+
+    protected static String replaceResource(OutputFile file, String module){
+        String resourcePath = "E:/workspace/project/demo/{project}/src/main/resources{type}{module}";
+        String type = StringUtils.isBlank(map.get(file)) ? "" : "/" + map.get(file);
+        module = StringUtils.isBlank(module) ? "" : "/" + module;
+        return resourcePath.replace("{project}",projectMap.get(file))
+                .replace("{type}", type)
+                .replace("{module}", module)
+                .replaceAll("\\.", "/");
     }
 
     // 处理 all 情况
     protected static List<String> getTables(String tables) {
         return "all".equals(tables) ? Collections.emptyList() : Arrays.asList(tables.split(","));
     }
+
+    private static final Map<OutputFile, String> projectMap =
+            ImmutableMap.<OutputFile, String>builder()
+                    .put(OutputFile.entity, "demo-entity")
+                    .put(OutputFile.mapper, "demo-entity")
+                    .put(OutputFile.mapperXml, "demo-entity")
+                    .put(OutputFile.service, "demo-facade")
+                    .put(OutputFile.serviceImpl, "demo-service")
+                    .put(OutputFile.controller, "demo-web")
+                    .build();
+
+    private static final Map<OutputFile, String> map =
+            ImmutableMap.<OutputFile, String>builder()
+                    .put(OutputFile.entity, "entity")
+                    .put(OutputFile.mapper, "mapper")
+                    .put(OutputFile.mapperXml, "mapper.xml")
+                    .put(OutputFile.service, "service.facade")
+                    .put(OutputFile.serviceImpl, "service.facade.impl")
+                    .put(OutputFile.controller, "web.controller")
+                    .put(OutputFile.other, "other")
+                    .build();
+
 }
