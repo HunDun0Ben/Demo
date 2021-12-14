@@ -1,6 +1,8 @@
 package com.hundun.demo.user.mapper;
 
+import com.hundun.demo.user.entity.Userinfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -12,5 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserinfoMapper {
-
+    Userinfo getById(@Param("id") String id);
 }

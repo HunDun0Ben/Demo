@@ -12,4 +12,5 @@ import com.hundun.demo.user.entity.Userinfo;
  */
 public interface UserinfoService {
 
+    Userinfo getById(String id);
 }
