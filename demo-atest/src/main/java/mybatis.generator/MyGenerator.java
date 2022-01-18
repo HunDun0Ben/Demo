@@ -84,16 +84,14 @@ public class MyGenerator {
     }
 
     protected static Map<OutputFile, String> getPathInfo(String base, String module) {
-        //
-        CharMatcher matcher = CharMatcher.is('?');
         Map<OutputFile, String> map = new HashMap<>(OutputFile.values().length);
         map.put(OutputFile.entity, replaceJavaPath(OutputFile.entity, base, module));
-        map.put(OutputFile.mapper, replaceJavaPath(OutputFile.entity, base, module));
-        map.put(OutputFile.service, replaceJavaPath(OutputFile.entity, base, module));
-        map.put(OutputFile.serviceImpl, replaceJavaPath(OutputFile.entity, base, module));
-        map.put(OutputFile.controller, replaceJavaPath(OutputFile.entity, base, module));
+        map.put(OutputFile.mapper, replaceJavaPath(OutputFile.mapper, base, module));
+        map.put(OutputFile.service, replaceJavaPath(OutputFile.service, base, module));
+        map.put(OutputFile.serviceImpl, replaceJavaPath(OutputFile.serviceImpl, base, module));
+        map.put(OutputFile.controller, replaceJavaPath(OutputFile.controller, base, module));
 
-        map.put(OutputFile.mapperXml, replaceResource(OutputFile.entity, module));
+        map.put(OutputFile.mapperXml, replaceResource(OutputFile.mapperXml, module));
         return map;
     }
 
@@ -138,7 +136,7 @@ public class MyGenerator {
             ImmutableMap.<OutputFile, String>builder()
                     .put(OutputFile.entity, "entity")
                     .put(OutputFile.mapper, "mapper")
-                    .put(OutputFile.mapperXml, "mapper.xml")
+                    .put(OutputFile.mapperXml, "mapper")
                     .put(OutputFile.service, "service.facade")
                     .put(OutputFile.serviceImpl, "service.facade.impl")
                     .put(OutputFile.controller, "web.controller")

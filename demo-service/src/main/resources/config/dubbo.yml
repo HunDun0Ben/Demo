@@ -1,7 +1,9 @@
-spring:
-  dubbo:
-    application:
-      name: service
-    registry: zookeeper://localhost:2181
-    protocol:
-      name: dubbo
+idealx:
+  forgot-change-pin: 123
+  mars:
+    base-gateway:
+    url:
+      getPreLoginValue:
+        default: https://ng-ideal.corp.dbs.com:9043/marsInterfaceService/ws/shift/getPreLoginValue
+      selfInitShiftLink:
+        default: https://ng-ideal.corp.dbs.com:9043/marsInterfaceService/ws/shift/selfInitShiftLink
