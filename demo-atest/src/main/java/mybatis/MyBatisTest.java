@@ -8,8 +8,13 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MyBatisTest {
+    
+    private static final Logger log = LoggerFactory.getLogger(MyBatisTest.class);
+
     public MyBatisTest() {
     }
 
@@ -19,6 +24,6 @@ public class MyBatisTest {
         SqlSessionFactory sqlSessionFactory = (new SqlSessionFactoryBuilder()).build(is);
         SqlSession sqlSession = sqlSessionFactory.openSession();
         List<Map> list = sqlSession.selectList("selectUserinfo");
-        System.out.println(list);
+        log.info(list.toString());
     }
 }

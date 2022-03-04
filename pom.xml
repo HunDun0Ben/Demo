@@ -39,6 +39,7 @@
         <guava.version>27.0.1-jre</guava.version>
         <mybatis.version>2.2.0</mybatis.version>
         <mybatis.plus.version>3.4.2</mybatis.plus.version>
+        <log4j2.version>2.17.2</log4j2.version>
     </properties>
 
     <dependencyManagement>
@@ -100,7 +101,6 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
-
 
         </dependencies>
     </dependencyManagement>
