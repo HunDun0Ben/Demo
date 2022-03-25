@@ -54,7 +54,7 @@ public class FunctionProgramDemo {
                 stu.name = stu.name + "1";
             }
         };
-        // 下方的这个形式是上方的简写方式。
+        // 下方的这个形式是上方的简写方式. 单个语句可以不适用花括号. 
         Consumer<Student> addThreeName = stu -> stu.name = stu.name + "2";
         // accept 方法 return void; 自身习惯并且比较完整的写法。
         Consumer<Student> lamdaExample = (stu) -> { stu.name = stu.name + "3"; return; };

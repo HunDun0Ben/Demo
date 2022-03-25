@@ -1,5 +1,4 @@
 ##父子 Maven 工程模块。
-##父子 Maven 工程模块。
 在父模块声明对应的子模块， 
 在父模块中预先声明 dependencyManagement, pluginManagement
 
