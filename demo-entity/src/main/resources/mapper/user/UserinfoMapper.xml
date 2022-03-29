@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hundun.demo.user.mapper.UserinfoMapper">
+<mapper namespace="com.hundun.demo.entity.user.mapper.UserinfoMapper">
 
-    <resultMap id="BaseResultMap" type="com.hundun.demo.user.entity.Userinfo">
+    <resultMap id="BaseResultMap" type="com.hundun.demo.entity.user.entity.Userinfo">
         <id column="id" jdbcType="BIGINT" property="id" />
         <result column="name" jdbcType="VARCHAR" property="name" />
         <result column="email" jdbcType="VARCHAR" property="email" />

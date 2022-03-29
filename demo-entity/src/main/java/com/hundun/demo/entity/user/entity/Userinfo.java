@@ -1,4 +1,4 @@
-package com.hundun.demo.user.entity;
+package com.hundun.demo.entity.user.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

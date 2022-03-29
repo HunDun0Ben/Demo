@@ -1,6 +1,6 @@
 package com.hundun.demo.entity.enumc;
 
-import com.hundun.demo.validation.EnumEqual;
+import com.hundun.demo.entity.validation.EnumEqual;
 
 public enum Sex implements EnumEqual {
     // 男性

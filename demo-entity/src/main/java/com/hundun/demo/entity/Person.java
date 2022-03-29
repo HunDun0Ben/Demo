@@ -1,7 +1,7 @@
 package com.hundun.demo.entity;
 
 import com.hundun.demo.entity.enumc.Sex;
-import com.hundun.demo.validation.constraints.EnumValid;
+import com.hundun.demo.entity.validation.constraints.EnumValid;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

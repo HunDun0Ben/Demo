@@ -1,4 +1,4 @@
-package com.hundun.demo.validation;
+package com.hundun.demo.entity.validation;
 
 import java.lang.reflect.Method;
 

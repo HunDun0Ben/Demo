@@ -1,6 +1,6 @@
-package com.hundun.demo.user.mapper;
+package com.hundun.demo.entity.user.mapper;
 
-import com.hundun.demo.user.entity.Userinfo;
+import com.hundun.demo.entity.user.entity.Userinfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

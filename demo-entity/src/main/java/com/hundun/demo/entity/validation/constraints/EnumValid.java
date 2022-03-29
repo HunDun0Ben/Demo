@@ -1,7 +1,7 @@
-package com.hundun.demo.validation.constraints;
+package com.hundun.demo.entity.validation.constraints;
 
 
-import com.hundun.demo.validation.validators.EnumValidator;
+import com.hundun.demo.entity.validation.validators.EnumValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

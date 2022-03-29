@@ -1,4 +1,4 @@
-package com.hundun.demo.validation;
+package com.hundun.demo.entity.validation;
 
 public enum EnumTest implements EnumEqual {
     ONE("_ONE",1),

@@ -1,6 +1,6 @@
-package com.hundun.demo.validation.validators;
+package com.hundun.demo.entity.validation.validators;
 
-import com.hundun.demo.validation.constraints.MyTest;
+import com.hundun.demo.entity.validation.constraints.MyTest;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.validation.ConstraintValidator;

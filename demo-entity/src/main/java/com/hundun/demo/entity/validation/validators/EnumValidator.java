@@ -1,7 +1,7 @@
-package com.hundun.demo.validation.validators;
+package com.hundun.demo.entity.validation.validators;
 
-import com.hundun.demo.validation.EnumEqual;
-import com.hundun.demo.validation.constraints.EnumValid;
+import com.hundun.demo.entity.validation.EnumEqual;
+import com.hundun.demo.entity.validation.constraints.EnumValid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.ObjectUtils;
 
