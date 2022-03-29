@@ -1,6 +1,6 @@
-package com.hundun.demo.user.service.facade;
+package com.hundun.demo.entity.user.service.facade;
 
-import com.hundun.demo.user.entity.Userinfo;
+import com.hundun.demo.entity.user.entity.Userinfo;
 
 /**
  * <p>
