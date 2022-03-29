@@ -1,13 +1,11 @@
-package com.hundun.demo.facade;
+package com.hundun.demo;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableDubbo
 @SpringBootApplication
-@MapperScan("com.hundun.demo.**.mapper")
 public class DemoServiceApplication {
 
 	public static void main(String[] args) {

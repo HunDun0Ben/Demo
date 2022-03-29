@@ -6,6 +6,7 @@
         <groupId>com.hundun</groupId>
         <artifactId>demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>demo-service</artifactId>
@@ -53,6 +54,13 @@
             <artifactId>demo-facade</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.hundun</groupId>
+            <artifactId>demo-entity</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- dubbo 使用时，与 zookeeper 交互需要使用到的依赖。
         ？？？也可以使用 zkClient -->
         <dependency>

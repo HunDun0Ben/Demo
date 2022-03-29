@@ -1,8 +1,8 @@
 package com.hundun.demo.facade.impl.user;
 
-import com.hundun.demo.user.entity.Userinfo;
-import com.hundun.demo.user.mapper.UserinfoMapper;
-import com.hundun.demo.user.service.facade.UserinfoService;
+import com.hundun.demo.entity.user.entity.Userinfo;
+import com.hundun.demo.entity.user.mapper.UserinfoMapper;
+import com.hundun.demo.entity.user.service.facade.UserinfoService;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 
