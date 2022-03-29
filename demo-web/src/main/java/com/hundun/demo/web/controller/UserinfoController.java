@@ -1,8 +1,8 @@
 package com.hundun.demo.web.controller;
 
 
-import com.hundun.demo.user.entity.Userinfo;
-import com.hundun.demo.user.service.facade.UserinfoService;
+import com.hundun.demo.entity.user.entity.Userinfo;
+import com.hundun.demo.entity.user.service.facade.UserinfoService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
