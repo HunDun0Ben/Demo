@@ -1,4 +1,4 @@
-package com.hundun.demo.web.security.controller;
+package com.hundun.demo.web.controller.login;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +11,6 @@ public class SecurityTestController {
     public String loginPage() {
         return "true";
     }
-
 
     @PostMapping("/login")
     public String doLogin(String name, String passwd) {

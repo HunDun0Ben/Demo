@@ -23,6 +23,7 @@
         <module>demo-facade</module>
         <module>demo-service</module>
         <module>demo-web</module>
+        <!-- demo-boot --> <!-- 启动类的概念, 可以更好的模块化, 控制各个包自身的依赖 -->
     </modules>
 
     <properties>

@@ -37,16 +37,19 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     // 配置如何通过拦截器保护请求
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        // 权限请求设置
         http.authorizeRequests()
                 .antMatchers("/user/**").hasRole("user")
                 .antMatchers("/admin/**").hasRole("admin")
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated();
-        http.formLogin()
-                .loginPage("/login").loginProcessingUrl("/login")
-                .passwordParameter("passwd").usernameParameter("name").permitAll()
-                .and().csrf().disable();
-        http.httpBasic();
+        // 登录页面相关设置
+        http.formLogin().loginPage("/login").loginProcessingUrl("/login")
+                .passwordParameter("passwd")
+                .usernameParameter("name")
+                .permitAll();
+        // 其他设置
+        http.httpBasic()
+            .and().csrf().disable();
     }
-
 }
