@@ -1,12 +1,7 @@
 package jvm.agent;
 
 
-
-import com.sun.tools.attach.VirtualMachine;
-import com.sun.tools.attach.VirtualMachineDescriptor;
-
 import java.lang.instrument.Instrumentation;
-import java.util.List;
 
 /**
  * JVM 启动时，同时加载此 Agent
