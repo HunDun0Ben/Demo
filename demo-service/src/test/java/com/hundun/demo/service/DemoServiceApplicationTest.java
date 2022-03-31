@@ -1,6 +1,6 @@
-package com.hundun.demo.service.service;
+package com.hundun.demo.service;
 
-import com.hundun.demo.service.DemoServiceApplication;
+import com.hundun.demo.DemoServiceApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

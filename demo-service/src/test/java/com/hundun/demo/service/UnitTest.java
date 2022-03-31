@@ -1,4 +1,4 @@
-package com.hundun.demo.service.service;
+package com.hundun.demo.service;
 
 import com.hundun.demo.service.util.MockStaticUtil;
 import org.junit.*;
