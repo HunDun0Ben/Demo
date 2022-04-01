@@ -33,14 +33,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <springboot.version>2.4.1</springboot.version>
         <curator.version>5.1.0</curator.version>
-        <zookeeper.version>3.6.0</zookeeper.version>
-        <powermock.version>2.0.2</powermock.version>
         <guava.version>27.0.1-jre</guava.version>
-        <mybatis.version>2.2.0</mybatis.version>
-        <mybatis.plus.version>3.4.2</mybatis.plus.version>
         <log4j2.version>2.17.2</log4j2.version>
+        <mybatis.version>3.5.7</mybatis.version>
+        <mybatis.starter.version>2.2.0</mybatis.starter.version>
+        <mybatis.plus.version>3.4.2</mybatis.plus.version>
+        <powermock.version>2.0.2</powermock.version>
+        <springboot.version>2.4.1</springboot.version>
+        <zookeeper.version>3.6.0</zookeeper.version>
     </properties>
 
     <dependencyManagement>
