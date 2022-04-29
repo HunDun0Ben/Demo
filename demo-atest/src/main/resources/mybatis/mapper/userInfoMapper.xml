@@ -2,8 +2,34 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hundun.userinfo">
-    <select id="selectUserinfo" resultType="java.util.HashMap">
+<mapper namespace="mybatis.mapper.UserinfoMapper">
+
+    <resultMap id="BaseResultMap" type="mybatis.entity.Userinfo">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="email_verified_at" jdbcType="TIMESTAMP" property="emailVerifiedAt" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="openid" jdbcType="VARCHAR" property="openid" />
+        <result column="sex" jdbcType="BIT" property="sex" />
+        <result column="province" jdbcType="VARCHAR" property="province" />
+        <result column="city" jdbcType="VARCHAR" property="city" />
+        <result column="country" jdbcType="VARCHAR" property="country" />
+        <result column="headimgurl" jdbcType="VARCHAR" property="headimgurl" />
+        <result column="subscribe" jdbcType="BIT" property="subscribe" />
+        <result column="level_id" jdbcType="INTEGER" property="levelId" />
+        <result column="deposit" jdbcType="DECIMAL" property="deposit" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="is_frz" jdbcType="BIT" property="isFrz" />
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+        <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+    </resultMap>
+
+    <select id="selectUserinfo" resultMap="BaseResultMap">
         select * from userinfo limit 10
-  </select>
+    </select>
+
+    <select id="getById" parameterType="String" resultMap="BaseResultMap">
+      SELECT * FROM userinfo WHERE ID = #{id}
+    </select>
 </mapper>
